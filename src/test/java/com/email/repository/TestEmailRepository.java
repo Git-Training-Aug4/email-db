@@ -19,7 +19,7 @@ import com.email.repository.dao.MailTemplateDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:hibernate4.xml"})
-@TransactionConfiguration(defaultRollback = false)
+@TransactionConfiguration
 @Transactional
 public class TestEmailRepository {
 
