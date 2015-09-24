@@ -1,7 +1,7 @@
 
-    drop table if exists EMAIL;
+    drop table if exists MAIL_TEMPLATE;
 
-    create table EMAIL (
+    create table MAIL_TEMPLATE (
         ID integer not null auto_increment,
         NAME varchar(255),
         TEMPLATE TEXT,
