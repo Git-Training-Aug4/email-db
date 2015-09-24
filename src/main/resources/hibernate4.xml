@@ -40,7 +40,7 @@
     </bean>
    
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" 
-       	p:packagesToScan="com.email.repository"
+       	p:packagesToScan="com.email.model"
        	p:dataSource-ref="dataSource">
   		<property name="hibernateProperties">
             <props>
@@ -48,7 +48,7 @@
                 <prop key="hibernate.cache.use_second_level_cache">false</prop>
 				<prop key="hibernate.cache.use_query_cache">false</prop>
 				<prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
             </props>
         </property>
     </bean>

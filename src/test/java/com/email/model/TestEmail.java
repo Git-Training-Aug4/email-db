@@ -13,7 +13,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.email.model.Email;
+import com.email.model.MailTemplate;
 
 public class TestEmail {
 
@@ -33,9 +33,9 @@ public class TestEmail {
 	@Test
 	public void createEntity(){
 		session.getTransaction().begin();
-		Email email = new Email();
+		MailTemplate email = new MailTemplate();
 		email.setName("Bank");
-		email.setPattern("Pattern");
+		email.setTemplate("Pattern");
 		session.save(email);
 		session.getTransaction().commit();
 	}
@@ -44,22 +44,22 @@ public class TestEmail {
 	public void updateEntity(){
 		
 		session.getTransaction().begin();
-		Email email = (Email)session.get(Email.class, 1);
+		MailTemplate email = (MailTemplate)session.get(MailTemplate.class, 1);
 		email.setName("Ball");
 		session.update(email);
 		session.getTransaction().commit();
 		
-		Email emailAfter = (Email)session.get(Email.class, 1);
+		MailTemplate emailAfter = (MailTemplate)session.get(MailTemplate.class, 1);
 		assertEquals("Ball",emailAfter.getName());
 	}
 	
 	@Test
 	public void deleteEntity(){
 		session.getTransaction().begin();
-		session.delete((Email)session.get(Email.class, 1));
+		session.delete((MailTemplate)session.get(MailTemplate.class, 1));
 		session.getTransaction().commit();
 		
-		assertNull((Email)session.get(Email.class, 1));
+		assertNull((MailTemplate)session.get(MailTemplate.class, 1));
 	}
 	
 	public static SessionFactory createSessionFactory() {

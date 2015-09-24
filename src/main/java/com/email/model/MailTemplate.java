@@ -1,14 +1,13 @@
 package com.email.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+@NamedQueries(
+	@NamedQuery(name = "FIND_BY_NAME_MAIL_TEMPLATE", query = "FROM MailTemplate WHERE name =:NAME")
+)
 @Table(name="EMAIL")
 @Entity
-public class Email {
+public class MailTemplate {
 	
 	@Id
 	@GeneratedValue
@@ -18,8 +17,8 @@ public class Email {
 	@Column(name="NAME")
 	private String name;
 	
-	@Column(name="PATTERN",columnDefinition="TEXT")
-	private String pattern;
+	@Column(name="TEMPLATE",columnDefinition="TEXT")
+	private String template;
 
 	public Integer getId() {
 		return id;
@@ -37,12 +36,12 @@ public class Email {
 		this.name = name;
 	}
 
-	public String getPattern() {
-		return pattern;
+	public String getTemplate() {
+		return template;
 	}
 
-	public void setPattern(String pattern) {
-		this.pattern = pattern;
+	public void setTemplate(String template) {
+		this.template = template;
 	}
 	
 }

@@ -4,6 +4,6 @@
     create table EMAIL (
         ID integer not null auto_increment,
         NAME varchar(255),
-        PATTERN TEXT,
+        TEMPLATE TEXT,
         primary key (ID)
     );
