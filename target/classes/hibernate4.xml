@@ -18,10 +18,11 @@
  
  	<!-- Use @Controller annotations for MVC controller definitions -->
  	<context:annotation-config/>
-	<mvc:annotation-driven/>
  	
  	<!-- Use @Component annotations for bean definitions -->
-	<context:component-scan base-package="com.email.*" />
+	<context:component-scan base-package="com.email.*" />	
+	
+	
 	
 	<!-- property Holder using multiple resources-->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -48,7 +49,7 @@
                 <prop key="hibernate.cache.use_second_level_cache">false</prop>
 				<prop key="hibernate.cache.use_query_cache">false</prop>
 				<prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
     </bean>

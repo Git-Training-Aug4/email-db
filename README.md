@@ -1,3 +1,3 @@
 Create Schema
 
-mvn hibernate3:hbm2ddl sql:execute -P dev
+mvn hibernate4:export sql:execute
